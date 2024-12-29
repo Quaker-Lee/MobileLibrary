@@ -6,6 +6,11 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		3B0658CF2D21997A00986908 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 3B0658CE2D21997A00986908 /* Then */; };
+		3B0658D22D21999600986908 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 3B0658D12D21999600986908 /* SnapKit */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		3B0658752D1E934400986908 /* MobileLibrary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileLibrary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -36,6 +41,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B0658CF2D21997A00986908 /* Then in Frameworks */,
+				3B0658D22D21999600986908 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +85,8 @@
 			);
 			name = MobileLibrary;
 			packageProductDependencies = (
+				3B0658CE2D21997A00986908 /* Then */,
+				3B0658D12D21999600986908 /* SnapKit */,
 			);
 			productName = MobileLibrary;
 			productReference = 3B0658752D1E934400986908 /* MobileLibrary.app */;
@@ -107,6 +116,10 @@
 			);
 			mainGroup = 3B06586C2D1E934300986908;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				3B0658CD2D21997A00986908 /* XCRemoteSwiftPackageReference "Then" */,
+				3B0658D02D21999600986908 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 3B0658762D1E934400986908 /* Products */;
 			projectDirPath = "";
@@ -149,7 +162,6 @@
 				INFOPLIST_FILE = MobileLibrary/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -176,7 +188,6 @@
 				INFOPLIST_FILE = MobileLibrary/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -333,6 +344,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3B0658CD2D21997A00986908 /* XCRemoteSwiftPackageReference "Then" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devxoul/Then";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+		3B0658D02D21999600986908 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3B0658CE2D21997A00986908 /* Then */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3B0658CD2D21997A00986908 /* XCRemoteSwiftPackageReference "Then" */;
+			productName = Then;
+		};
+		3B0658D12D21999600986908 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3B0658D02D21999600986908 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3B06586D2D1E934300986908 /* Project object */;
 }
