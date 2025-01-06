@@ -1,21 +1,19 @@
 //
-//  ViewController.swift
+//  ModalVC.swift
 //  MobileLibrary
 //
-//  Created by 이재건 on 12/27/24.
+//  Created by 이재건 on 1/6/25.
 //
 
 import UIKit
 import SnapKit
 import Then
 
-class MainVC: UIViewController {
-
+class ModalVC: UIViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        
     }
-
-
 }
-

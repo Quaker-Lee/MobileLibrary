@@ -9,10 +9,12 @@ import UIKit
 import SnapKit
 import Then
 
-class AddList: UIViewController {
+class AddListVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        view.backgroundColor = .blue
         
     }
 }
