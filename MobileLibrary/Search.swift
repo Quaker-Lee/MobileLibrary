@@ -15,6 +15,7 @@
 import UIKit
 import SnapKit
 import Then
+import Alamofire
 
 class SearchVC: UIViewController, UISearchBarDelegate {
     
@@ -35,7 +36,28 @@ class SearchVC: UIViewController, UISearchBarDelegate {
         $0.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
     }
     
-    private let testData: [String] = ["이상한 책 1 ", "이상한 책 2", "이상한 책 3"]
+    //TableView 테스트를 위한 Moc데이터
+    private let testData: [String] = [
+        "이상한 책 1",
+        "이상한 책 2",
+        "이상한 책 3",
+        "이상한 책 4",
+        "이상한 책 5",
+        "이상한 책 6",
+        "이상한 책 7",
+        "이상한 책 8",
+        "이상한 책 9",
+        "이상한 책 10",
+        "이상한 책 11",
+        "이상한 책 12",
+        "이상한 책 13",
+        "이상한 책 14",
+        "이상한 책 15",
+        "이상한 책 16",
+        "이상한 책 17",
+        "이상한 책 18",
+        "이상한 책 19",
+    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,9 +91,15 @@ class SearchVC: UIViewController, UISearchBarDelegate {
         tableView.snp.makeConstraints {
             $0.top.equalTo(searchResultLabel.snp.bottom).offset(20)
             $0.leading.trailing.bottom.equalToSuperview()
+            $0.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
         }
         tableView.delegate = self
         tableView.dataSource = self
+        
+        //테이블뷰 하단 사이즈 조절
+        if let tabBarHeight = tabBarController?.tabBar.frame.height {
+            tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: tabBarHeight, right: 0)
+        }
     }
     
     //MARK: 키보드 설정
