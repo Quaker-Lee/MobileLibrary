@@ -5,6 +5,13 @@
 //  Created by 이재건 on 12/27/24.
 //
 
+//
+//  ViewController.swift
+//  MobileLibrary
+//
+//  Created by 이재건 on 12/27/24.
+//
+
 import UIKit
 import SnapKit
 import Then
@@ -24,14 +31,15 @@ class SearchVC: UIViewController, UISearchBarDelegate {
         $0.textColor = .black
     }
     
-    private let tableView = UITableView()
+    private let tableView = UITableView().then {
+        $0.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+    }
     
-    
+    private let testData: [String] = ["이상한 책 1 ", "이상한 책 2", "이상한 책 3"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
-        
     }
     
     //MARK: UI 설정
@@ -56,10 +64,15 @@ class SearchVC: UIViewController, UISearchBarDelegate {
             $0.leading.trailing.equalToSuperview().offset(30)
         }
         
-        
+        //MARK: TableView
+        view.addSubview(tableView)
+        tableView.snp.makeConstraints {
+            $0.top.equalTo(searchResultLabel.snp.bottom).offset(20)
+            $0.leading.trailing.bottom.equalToSuperview()
+        }
+        tableView.delegate = self
+        tableView.dataSource = self
     }
-    
-    
     
     //MARK: 키보드 설정
     //다른 공간 터치시 키보드 사라짐
@@ -67,21 +80,30 @@ class SearchVC: UIViewController, UISearchBarDelegate {
         view.endEditing(true)
         super.touchesBegan(touches, with: event)
     }
+    
     //UISearchBarDelegate 메서드. 리턴 키 누르면 키보드 사라짐
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
     }
 }
 
+//MARK: UITableView
 extension SearchVC: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let modalVC = ModalVC()
+        present(modalVC, animated: true, completion: nil)
+    }
 }
 
 extension SearchVC: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
-    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        return testData.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        cell.textLabel?.text = testData[indexPath.row]
+        return cell
     }
 }
+
